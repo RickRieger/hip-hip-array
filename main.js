@@ -158,10 +158,15 @@ console.log('====challenge 10====')
 
 const newArray = [];
 
+// build the copy...
 for (i = 3; i < students.length && i < 11; i++){
-  newArray[i]= students[i];
+  newArray.push(students[i]);
+}
+
+// ...then log it
+for (i = 0; i < newArray.length; i++){
   console.log(newArray[i]);
-} 
+}
 
 //Another solution
 
@@ -179,13 +184,13 @@ console.log('====challenge 11====')
 
  const students2 = students.slice(3,11);
 
- for (i = 0; i < students.length; i++){
-console.log(students[i]); 
- }
-console.log('=========');
  for (i = 0; i < students2.length; i++){
-  console.log(students2[i]); 
+  console.log(students2[i]);
    }
+console.log('=========');
+ for (i = 0; i < students.length; i++){
+console.log(students[i]);
+ }
 
 // Challenge 12
 // Pull the items at indices 4-6 (inclusive) from the following array using .splice (NOT .slice!), then console.log out each item from the ORIGINAL array. Note that .splice DOES change the original array.
