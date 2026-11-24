@@ -40,10 +40,9 @@ for (i = 0; i < students.length; i++){
 
 
 console.log('====challenge 2====')
-grades.reverse();
 
-for (i = 0; i < grades.length; i++){
-  
+// start at the last index and count down to 0
+for (i = grades.length - 1; i >= 0; i--){
   console.log(grades[i]);
 }
 
@@ -79,13 +78,11 @@ for (i=0; i < mixedSignNumbers.length; i++) {
 
 // Challenge 5
 // Remove two values from the beginning and one value from the end of the following array, simply by deleting them in the following line. Then console.log out each value individually.
-const symmetricalCapitals = ['A', 'H', 'I', 'M', 'O', 'T', 'U', 'V', 'W', 'X', 'Y'];
+// 'A' and 'H' deleted from the start and 'Y' from the end, right in the array
+const symmetricalCapitals = ['I', 'M', 'O', 'T', 'U', 'V', 'W', 'X'];
 
 
 console.log('====challenge 5====')
-
-symmetricalCapitals.splice(0,2);
-symmetricalCapitals.pop();
 
 for (i = 0; i < symmetricalCapitals.length; i++){
   
@@ -94,13 +91,11 @@ for (i = 0; i < symmetricalCapitals.length; i++){
 
 // Challenge 6
 // Add a value (your choice!) to the start of the following array and two values (of your choice) to the end simply by adding them in the following line, and then console.log out each value individually.
-const fibonacciNumbers = [1, 1, 2, 3, 5, 8, 13];
+// 77 added at the start and 78, 79 at the end, right in the array
+const fibonacciNumbers = [77, 1, 1, 2, 3, 5, 8, 13, 78, 79];
 
 
 console.log('====challenge 6====')
-
-fibonacciNumbers.unshift(77);
-fibonacciNumbers.push(78,79);
 
 for (i = 0; i < fibonacciNumbers.length; i++){
   
