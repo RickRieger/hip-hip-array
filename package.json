@@ -1,0 +1,15 @@
+{
+  "name": "hip-hip-array",
+  "version": "1.0.0",
+  "description": "Code Immersives JavaScript exercise: creating arrays, looping through them and using array methods",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "jest --watchAll",
+    "test:ci": "jest --ci"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "29.7.0"
+  }
+}

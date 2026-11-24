@@ -10,7 +10,6 @@
 // Loop through the following array, console.logging out each value.
 
 
-
 const students = [
   'Tre',
   'Sonny',
@@ -29,21 +28,20 @@ const students = [
 
 console.log('====challenge 1====')
 
-for (i = 0; i < students.length; i++){
+for (let i = 0; i < students.length; i++) {
   console.log(students[i]);
 }
 
 
 // Challenge 2
 // Loop through the following array BACKWARDS, console.logging out each value. 64 should be printed first and 100 last.
- const grades = [100, 80, 110, 75, 83, 64];
+const grades = [100, 80, 110, 75, 83, 64];
 
 
 console.log('====challenge 2====')
-grades.reverse();
 
-for (i = 0; i < grades.length; i++){
-  
+// start at the last index and count down to 0
+for (let i = grades.length - 1; i >= 0; i--) {
   console.log(grades[i]);
 }
 
@@ -54,12 +52,11 @@ const positiveNumbers = [5, 2, 13, 17, 4, 102, 3000];
 
 console.log('====challenge 3====')
 
-for (i=0; i < positiveNumbers.length; i++) {
-  if(positiveNumbers[i] % 2 === 0) {
+for (let i = 0; i < positiveNumbers.length; i++) {
+  if (positiveNumbers[i] % 2 === 0) {
     console.log(positiveNumbers[i]);
   }
 }
-
 
 
 // Challenge 4
@@ -67,43 +64,36 @@ for (i=0; i < positiveNumbers.length; i++) {
 const mixedSignNumbers = [3, 15, 14, -2, -3, -8, -103, 4];
 
 
-
 console.log('====challenge 4====')
 
 
-for (i=0; i < mixedSignNumbers.length; i++) {
-  if(mixedSignNumbers[i] % 2 === 0) {
+for (let i = 0; i < mixedSignNumbers.length; i++) {
+  if (mixedSignNumbers[i] % 2 === 0) {
     console.log(mixedSignNumbers[i]);
   }
 }
 
 // Challenge 5
 // Remove two values from the beginning and one value from the end of the following array, simply by deleting them in the following line. Then console.log out each value individually.
-const symmetricalCapitals = ['A', 'H', 'I', 'M', 'O', 'T', 'U', 'V', 'W', 'X', 'Y'];
+// 'A' and 'H' deleted from the start and 'Y' from the end, right in the array
+const symmetricalCapitals = ['I', 'M', 'O', 'T', 'U', 'V', 'W', 'X'];
 
 
 console.log('====challenge 5====')
 
-symmetricalCapitals.splice(0,2);
-symmetricalCapitals.pop();
-
-for (i = 0; i < symmetricalCapitals.length; i++){
-  
+for (let i = 0; i < symmetricalCapitals.length; i++) {
   console.log(symmetricalCapitals[i]);
 }
 
 // Challenge 6
 // Add a value (your choice!) to the start of the following array and two values (of your choice) to the end simply by adding them in the following line, and then console.log out each value individually.
-const fibonacciNumbers = [1, 1, 2, 3, 5, 8, 13];
+// 77 added at the start and 78, 79 at the end, right in the array
+const fibonacciNumbers = [77, 1, 1, 2, 3, 5, 8, 13, 78, 79];
 
 
 console.log('====challenge 6====')
 
-fibonacciNumbers.unshift(77);
-fibonacciNumbers.push(78,79);
-
-for (i = 0; i < fibonacciNumbers.length; i++){
-  
+for (let i = 0; i < fibonacciNumbers.length; i++) {
   console.log(fibonacciNumbers[i]);
 }
 
@@ -117,8 +107,7 @@ console.log('====challenge 7====')
 
 const whyAmIMakingThisArray = ['eat', 'healthy', 'or', 'get', 'fat'];
 
-for (i = 0; i < whyAmIMakingThisArray.length; i++){
-
+for (let i = 0; i < whyAmIMakingThisArray.length; i++) {
   console.log(whyAmIMakingThisArray[i]);
 }
 
@@ -130,11 +119,10 @@ for (i = 0; i < whyAmIMakingThisArray.length; i++){
 console.log('====challenge 8====')
 
 const emptyArray = [];
-emptyArray.push(4,5);
-emptyArray.unshift(1,2,3);
+emptyArray.push(4, 5);
+emptyArray.unshift(1, 2, 3);
 
-for (i = 0; i < emptyArray.length; i++){
-  
+for (let i = 0; i < emptyArray.length; i++) {
   console.log(emptyArray[i]);
 }
 
@@ -145,8 +133,7 @@ for (i = 0; i < emptyArray.length; i++){
 
 console.log('====challenge 9====')
 
-for (i = 3; i < students.length && i < 11; i++){
-  
+for (let i = 3; i <= 10; i++) {
   console.log(students[i]);
 }
 
@@ -158,34 +145,31 @@ console.log('====challenge 10====')
 
 const newArray = [];
 
-for (i = 3; i < students.length && i < 11; i++){
-  newArray[i]= students[i];
+// build the copy...
+for (let i = 3; i <= 10; i++) {
+  newArray.push(students[i]);
+}
+
+// ...then log it
+for (let i = 0; i < newArray.length; i++) {
   console.log(newArray[i]);
-} 
-
-//Another solution
-
-// for(let i = 3; i ,= 10; i++){
-//   const copy = [];
-//   copy.push(students[i])
-//   console.log(copy)
-// }
+}
 
 // Challenge 11
 // Make a COPY of the `students` array *using .slice*, starting at index 3 and ending at index 10 (INCLUSIVE), then log out each value of the copy individually. THEN log out each value of the original array. Notice that the original array didn't get any values taken out of it, because `slice` does NOT modify the original array.
 
 console.log('====challenge 11====')
 
+// slice's end index is NOT included, so (3, 11) gives indexes 3 through 10
+const students2 = students.slice(3, 11);
 
- const students2 = students.slice(3,11);
-
- for (i = 0; i < students.length; i++){
-console.log(students[i]); 
- }
+for (let i = 0; i < students2.length; i++) {
+  console.log(students2[i]);
+}
 console.log('=========');
- for (i = 0; i < students2.length; i++){
-  console.log(students2[i]); 
-   }
+for (let i = 0; i < students.length; i++) {
+  console.log(students[i]);
+}
 
 // Challenge 12
 // Pull the items at indices 4-6 (inclusive) from the following array using .splice (NOT .slice!), then console.log out each item from the ORIGINAL array. Note that .splice DOES change the original array.
@@ -195,12 +179,12 @@ const dinosaurs = ['Velociraptor', 'T-Rex', 'Stegosaurus', 'Triceratops', 'Dimet
 console.log('====challenge 12====')
 
 
+// remove 3 items starting at index 4 (indexes 4, 5 and 6)
 dinosaurs.splice(4, 3);
 
-  for (i = 0; i < dinosaurs.length; i++){
-  console.log(dinosaurs[i]); 
-   }
-
+for (let i = 0; i < dinosaurs.length; i++) {
+  console.log(dinosaurs[i]);
+}
 
 // Challenge 13
 // Use .join to change the dinosaur strings from the above array into one 
@@ -212,9 +196,6 @@ const dinoJoin = dinosaurs.join('*');
 
 console.log(dinoJoin);
 
-
-  
-
 // Challenge 14
 // Use .reverse to reverse the dinosaur array and then log out the original array. .reverse DOES change the original array.
 
@@ -223,9 +204,9 @@ console.log('====challenge 14====')
 
 dinosaurs.reverse();
 
-for (i = 0; i < dinosaurs.length; i++){
-  console.log(dinosaurs[i]); 
-   }
+for (let i = 0; i < dinosaurs.length; i++) {
+  console.log(dinosaurs[i]);
+}
 
 // Challenge 15
 // Use .concat to combine the following two arrays into a NEW array you make 
@@ -240,14 +221,14 @@ const primaries = ['red', 'yellow', 'blue'];
 const secondaries = ['orange', 'green', 'purple'];
 const thirdaries = primaries.concat(secondaries);
 
-for (i = 0; i < thirdaries.length; i++){
-  console.log(thirdaries[i]); 
-   }
+for (let i = 0; i < thirdaries.length; i++) {
+  console.log(thirdaries[i]);
+}
 
-   for (i = 0; i < primaries.length; i++){
-    console.log(primaries[i]); 
-     }
+for (let i = 0; i < primaries.length; i++) {
+  console.log(primaries[i]);
+}
 
-     for (i = 0; i < secondaries.length; i++){
-      console.log(secondaries[i]); 
-       }
+for (let i = 0; i < secondaries.length; i++) {
+  console.log(secondaries[i]);
+}
